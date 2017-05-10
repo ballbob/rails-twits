@@ -3,7 +3,7 @@ class CheepsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    cheeps = Cheep.all
+    cheeps = current_user.cheeps
     render json: cheeps
   end  
 end
